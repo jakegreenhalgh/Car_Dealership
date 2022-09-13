@@ -33,7 +33,7 @@ public class Dealership implements IBuy {
     }
 
     public void repairCar(Vehicle vehicle) {
-        double repairCost = vehicle.getFinalCost() * (1 - vehicle.getDamage());
+        double repairCost = vehicle.getCarType().getPrice() * (1.0 - vehicle.getDamage());
         if (this.stock.contains(vehicle) && this.till >= repairCost) {
             this.till -= repairCost;
             vehicle.setDamage(1.0);

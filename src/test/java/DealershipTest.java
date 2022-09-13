@@ -43,4 +43,12 @@ public class DealershipTest {
         dealership.sellCar(vehicle, customer);
         assertEquals(30000, dealership.getTill());
     }
+
+    @Test
+    public void canRepairCar(){
+        dealership.buyCar(vehicle);
+        dealership.repairCar(vehicle);
+        assertEquals(20000, dealership.getTill());
+        assertEquals(1.0, vehicle.getDamage(), 0.0);
+    }
 }
